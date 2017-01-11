@@ -1,0 +1,221 @@
+Add-Type -AssemblyName System.Windows.Forms
+
+$Form = New-Object system.Windows.Forms.Form
+$Form.Text = "CI Generator"
+$Form.TopMost = $true
+$Form.Width = 624
+$Form.Height = 387
+
+$label1 = New-Object system.windows.Forms.Label
+$label1.Text = "CI Generator"
+$label1.BackColor = "#d2e11c"
+$label1.AutoSize = $true
+$label1.ForeColor = "#3c1ae3"
+$label1.Width = 25
+$label1.Height = 10
+$label1.location = new-object system.drawing.point(201,11)
+$label1.Font = "Leelawadee UI,22,style=Bold,Underline"
+$Form.controls.Add($label1)
+
+$label3 = New-Object system.windows.Forms.Label
+$label3.Text = "Country"
+$label3.AutoSize = $true
+$label3.Width = 25
+$label3.Height = 10
+$label3.location = new-object system.drawing.point(15,82)
+$label3.Font = "Lucida Console,15"
+$Form.controls.Add($label3)
+
+$label4 = New-Object system.windows.Forms.Label
+$label4.Text = "Company"
+$label4.AutoSize = $true
+$label4.Width = 25
+$label4.Height = 10
+$label4.location = new-object system.drawing.point(15,116)
+$label4.Font = "Lucida Console,15"
+$Form.controls.Add($label4)
+
+$label5 = New-Object system.windows.Forms.Label
+$label5.Text = "Device Class"
+$label5.AutoSize = $true
+$label5.Width = 25
+$label5.Height = 10
+$label5.location = new-object system.drawing.point(16,150)
+$label5.Font = "Lucida Console,15"
+$Form.controls.Add($label5)
+
+$label6 = New-Object system.windows.Forms.Label
+$label6.Text = "Device Type"
+$label6.AutoSize = $true
+$label6.Width = 25
+$label6.Height = 10
+$label6.location = new-object system.drawing.point(17,185)
+$label6.Font = "Lucida Console,15"
+$Form.controls.Add($label6)
+
+$label7 = New-Object system.windows.Forms.Label
+$label7.Text = "Inventory Number"
+$label7.AutoSize = $true
+$label7.Width = 25
+$label7.Height = 10
+$label7.location = new-object system.drawing.point(17,222)
+$label7.Font = "Lucida Console,15"
+$Form.controls.Add($label7)
+
+$label8 = New-Object system.windows.Forms.Label
+$label8.Text = "Generated CI"
+$label8.AutoSize = $true
+$label8.Width = 25
+$label8.Height = 10
+$label8.location = new-object system.drawing.point(16,257)
+$label8.Font = "Lucida Console,15"
+$Form.controls.Add($label8)
+
+$comboBox9 = New-Object system.windows.Forms.ComboBox
+$comboBox9.Text = "Country"
+$comboBox9.Width = 341
+$comboBox9.Height = 20
+$comboBox9.location = new-object system.drawing.point(248,81)
+$comboBox9.Font = "Microsoft Sans Serif,10"
+$comboBox9.DropDownStyle =  [System.Windows.Forms.ComboBoxStyle]::DropDownList #prevent typing in combobox
+$Form.controls.Add($comboBox9)
+
+$comboBox10 = New-Object system.windows.Forms.ComboBox
+$comboBox10.Text = "Company"
+$comboBox10.Width = 341
+$comboBox10.Height = 20
+$comboBox10.location = new-object system.drawing.point(249,116)
+$comboBox10.Font = "Microsoft Sans Serif,10"
+$comboBox10.DropDownStyle =  [System.Windows.Forms.ComboBoxStyle]::DropDownList #prevent typing in combobox
+$Form.controls.Add($comboBox10)
+
+$comboBox11 = New-Object system.windows.Forms.ComboBox
+$comboBox11.Text = "Device Type"
+$comboBox11.Width = 341
+$comboBox11.Height = 20
+$comboBox11.location = new-object system.drawing.point(249,150)
+$comboBox11.Font = "Microsoft Sans Serif,10"
+$comboBox11.DropDownStyle =  [System.Windows.Forms.ComboBoxStyle]::DropDownList #prevent typing in combobox
+$Form.controls.Add($comboBox11)
+
+$comboBox12 = New-Object system.windows.Forms.ComboBox
+$comboBox12.Text = "Device Class"
+$comboBox12.Width = 341
+$comboBox12.Height = 20
+$comboBox12.location = new-object system.drawing.point(247,185)
+$comboBox12.Font = "Microsoft Sans Serif,10"
+$comboBox12.DropDownStyle =  [System.Windows.Forms.ComboBoxStyle]::DropDownList #prevent typing in combobox
+$Form.controls.Add($comboBox12)
+
+$textBox13 = New-Object system.windows.Forms.TextBox
+$textBox13.Width = 338
+$textBox13.Height = 20
+$textBox13.location = new-object system.drawing.point(249,223)
+$textBox13.Font = "Microsoft Sans Serif,10"
+$textBox13.set_MaxLength(3)
+##$textBox13.TextLength = 3
+$Form.controls.Add($textBox13)
+
+$textBox14 = New-Object system.windows.Forms.TextBox
+$textBox14.Width = 338
+$textBox14.Height = 20
+$textBox14.location = new-object system.drawing.point(248,257)
+$textBox14.Font = "Microsoft Sans Serif,10"
+$Form.controls.Add($textBox14)
+
+$button = New-Object system.windows.Forms.Button
+$button.Text = "Generate CI"
+$button.Width = 105
+$button.Height = 34
+$button.location = new-object system.drawing.point(30,302)
+$button.Font = "Microsoft Sans Serif,10"
+$Form.controls.Add($button)
+
+$button16 = New-Object system.windows.Forms.Button
+$button16.Text = "Copy to Clipboard"
+$button16.Width = 112
+$button16.Height = 35
+$button16.location = new-object system.drawing.point(163,301)
+$button16.Font = "Microsoft Sans Serif,10"
+$Form.controls.Add($button16)
+
+$button17 = New-Object system.windows.Forms.Button
+$button17.Text = "NSLookup"
+$button17.Width = 105
+$button17.Height = 34
+$button17.location = new-object system.drawing.point(305,301)
+$button17.Font = "Microsoft Sans Serif,10"
+$Form.controls.Add($button17)
+
+$button18 = New-Object system.windows.Forms.Button
+$button18.Text = "Refresh"
+$button18.Width = 105
+$button18.Height = 34
+$button18.location = new-object system.drawing.point(455,303)
+$button18.Font = "Microsoft Sans Serif,10"
+$Form.controls.Add($button18)
+
+
+Function civalue(){
+
+$textBox14.Text = $null
+$Cvalue = "$($comboBox9.text)+$($comboBox10.text)+$($comboBox11.text)"
+$textBox14.Text = $Cvalue
+return $null
+}
+
+
+
+
+#Info shown on the form before the form is visible
+
+$Form.Add_Load({ #sets welcome messeage and add items to combo box BEFORE form shows
+    
+    $comboBox9.items.AddRange(("Germany","Italy","Spain"))
+    $comboBox11.items.AddRange(("Desktop","Printer"))
+    
+    $comboBox9.SelectedIndex = 
+    $comboBox11.SelectedIndex = 0
+   civalue
+})
+
+#setting the value of combobox for the Company which is depended on the country
+$event_handler_company = 
+{
+    $comboBox10.Items.Clear()
+    switch ($comboBox9.text)
+    {
+      "Germany" {$comboBox10.Items.AddRange(("G1","G2","G3"))}
+      "Italy"{$comboBox10.Items.AddRange(("I1","I2"))}
+      "Spain" {$comboBox10.Items.AddRange(("S1","S2"))}
+
+     Default {$comboBox10.Items.Clear()}
+    }
+  civalue  
+}
+
+
+#setting the value of combobox for the Device type which is depended on the Device
+$event_handler_device =
+{
+    $comboBox12.Items.Clear()
+    
+    switch ($comboBox11.text)
+    {
+    "Desktop" {$comboBox12.Items.AddRange(("D1","D2","D3"))}
+    "Printer" {$comboBox12.Items.AddRange(("P1","P2","P3"))}
+
+     Default {$comboBox12.Items.Clear()}
+    } #switch closed
+    civalue
+}
+
+$comboBox9.Add_SelectedIndexChanged($event_handler_company)
+$comboBox11.Add_SelectedIndexChanged($event_handler_device)
+
+
+
+
+
+[void]$Form.ShowDialog()
+$Form.Dispose()
